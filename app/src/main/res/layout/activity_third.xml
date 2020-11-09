@@ -7,7 +7,7 @@
     tools:context=".ThirdActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/eTvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -19,25 +19,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/eTvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Your Password"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintEnd_toEndOf="@+id/eTvEmail"
+        app:layout_constraintStart_toStartOf="@+id/eTvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/eTvEmail" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirm"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/eTvPassword"
+        app:layout_constraintStart_toStartOf="@+id/eTvPassword"
+        app:layout_constraintTop_toBottomOf="@+id/eTvPassword"
         app:layout_constraintVertical_bias="0.26999998" />
 </androidx.constraintlayout.widget.ConstraintLayout>
