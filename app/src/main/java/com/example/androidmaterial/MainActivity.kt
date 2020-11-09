@@ -1,5 +1,6 @@
 package com.example.androidmaterial
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,6 +14,11 @@ class MainActivity : AppCompatActivity() {
         val buttonOne = findViewById<Button>(R.id.btOne)
         val buttonTwo = findViewById<Button>(R.id.btTwo)
         val buttonThree = findViewById<Button>(R.id.btThree)
+
+        buttonTwo.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
