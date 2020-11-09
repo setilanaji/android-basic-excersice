@@ -3,9 +3,10 @@ package com.example.androidmaterial
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -15,19 +16,18 @@ class MainActivity : AppCompatActivity() {
         val buttonTwo = findViewById<Button>(R.id.btTwo)
         val buttonThree = findViewById<Button>(R.id.btThree)
 
-        buttonTwo.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            startActivity(intent)
-        }
+        buttonOne.setOnClickListener(this)
+        buttonTwo.setOnClickListener(this)
+        buttonThree.setOnClickListener(this)
 
-        buttonOne.setOnClickListener {
-            val intent = Intent(this, FirstActivity::class.java)
-            startActivity(intent)
-        }
-        buttonThree.setOnClickListener {
-            val intent = Intent(this, ThirdActivity::class.java)
-            startActivity(intent)
-        }
+    }
 
+    override fun onClick(v: View?) {
+        when(v!!.id){
+            R.id.btOne -> startActivity(Intent(this, FirstActivity::class.java))
+            R.id.btTwo -> startActivity(Intent(this, SecondActivity::class.java))
+            R.id.btThree ->  startActivity(Intent(this, ThirdActivity::class.java))
+
+        }
     }
 }
