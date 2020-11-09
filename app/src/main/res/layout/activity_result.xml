@@ -6,25 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
 
-    <EditText
-        android:id="@+id/eTvResult"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Type here"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Confirm"
-        app:layout_constraintEnd_toEndOf="@+id/eTvResult"
-        app:layout_constraintStart_toStartOf="@+id/eTvResult"
-        app:layout_constraintTop_toBottomOf="@+id/eTvResult" />
+        <EditText
+            android:id="@+id/eTvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Type here"
+            />
+
+        <android.widget.Button
+            android:id="@+id/btBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Confirm"
+
+            style="@style/MyCustomButton"
+            />
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

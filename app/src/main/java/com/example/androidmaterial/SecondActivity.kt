@@ -30,16 +30,19 @@ class SecondActivity : AppCompatActivity() {
         if (requestCode == REQUEST_RESULT && resultCode == RESULT_OK){
             data?.apply {
                 val text = getStringExtra(ResultActivity.RESULT_ID)
-                val builder = AlertDialog.Builder(this@SecondActivity)
-                builder.setTitle("Result")
-                builder.setMessage(text)
-                builder.show()
-
+                showDialog(this@SecondActivity, "Result", text.toString())
             }
         }
     }
 
     companion object{
         private const val REQUEST_RESULT = 1
+    }
+
+    private fun showDialog(context: Context, title: String, message: String){
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.show()
     }
 }

@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,5 +27,7 @@
         android:text="Enter"
         app:layout_constraintEnd_toEndOf="@+id/eTvInput"
         app:layout_constraintStart_toStartOf="@+id/eTvInput"
-        app:layout_constraintTop_toBottomOf="@+id/eTvInput" />
+        app:layout_constraintTop_toBottomOf="@+id/eTvInput"
+        style="@style/MyCustomButton"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

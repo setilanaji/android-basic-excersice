@@ -14,8 +14,8 @@ class ThirdActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third)
 
-        val textEmail = findViewById<EditText>(R.id.eTvEmail)
-        val textPassword = findViewById<EditText>(R.id.eTvPassword)
+        val textEmail = findViewById<EditText>(R.id.etfEmail)
+        val textPassword = findViewById<EditText>(R.id.etfPassword)
 
         val buttonLogin = findViewById<Button>(R.id.btLogin)
         buttonLogin.setOnClickListener {
@@ -23,9 +23,7 @@ class ThirdActivity : AppCompatActivity() {
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 }
-
         }
-
     }
 
     private fun String.isEmailValid(): Boolean {
@@ -33,8 +31,6 @@ class ThirdActivity : AppCompatActivity() {
     }
 
     private fun String.isPasswordValid(): Boolean{
-
-
         return !TextUtils.isEmpty(this) && this.matches(Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~\$^+=<>]).{8,20}\$"))
     }
 
