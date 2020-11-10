@@ -5,22 +5,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import com.example.androidmaterial.databinding.ActivityFirstBinding
 
 
 class FirstActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityFirstBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_first)
+        binding = ActivityFirstBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-
-        val text = findViewById<EditText>(R.id.eTvInput)
-        val button = findViewById<Button>(R.id.btEnter)
-        button.setOnClickListener {
-
-           val intent =  Intent(this.applicationContext, DetailActivity::class.java )
-            intent.putExtra("data", text.text.toString())
-            startActivity(intent)
+        binding.run {
+            btEnter.setOnClickListener {
+                val intent =  Intent(this@FirstActivity, DetailActivity::class.java )
+                intent.putExtra("data", eTvInput.text.toString())
+                startActivity(intent)
+            }
         }
-
     }
 }

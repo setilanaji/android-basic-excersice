@@ -7,20 +7,29 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.androidmaterial.databinding.ActivitySecondBinding
 
 
 class SecondActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySecondBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
 
+        binding = ActivitySecondBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val nextButton = findViewById<Button>(R.id.btNext)
-        nextButton.setOnClickListener {
-            val intent = Intent(this, ResultActivity::class.java)
-            startActivityForResult(intent, REQUEST_RESULT)
+        binding.run {
+            btNext.setOnClickListener {
+                val intent = Intent(this@SecondActivity, ResultActivity::class.java)
+                startActivityForResult(intent, REQUEST_RESULT)
+            }
         }
+
+//        val nextButton = findViewById<Button>(R.id.btNext)
+//        nextButton.setOnClickListener {
+//
+//        }
 
     }
 
